@@ -1,0 +1,94 @@
+<%- include('./includes/head.ejs') %>
+<!-- Top News Start-->
+<div class="top-news">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 tn-left">
+        <div class="row tn-slider">
+          <div class="col-md-6">
+            <div class="tn-img">
+              <img src="img/news-450x350-2.jpg" />
+              <div class="tn-title">
+                <a href="">Lorem ipsum dolor sit news</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tn-img">
+              <img src="img/news-450x350-1.jpg" />
+              <div class="tn-title">
+                <a href="">Integer hendrerit elit eget purus sodales maximus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 tn-right">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="tn-img">
+              <img src="img/news-350x223-1.jpg" />
+              <div class="tn-title">
+                <a href="">Lorem ipsum dolor sit</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tn-img">
+              <img src="img/news-350x223-1.jpg" />
+              <div class="tn-title">
+                <a href="">Lorem ipsum dolor sit</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tn-img">
+              <img src="img/news-350x223-3.jpg" />
+              <div class="tn-title">
+                <a href="">Lorem ipsum dolor sit</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tn-img">
+              <img src="img/news-350x223-4.jpg" />
+              <div class="tn-title">
+                <a href="">Lorem ipsum dolor sit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Top News End-->
+
+<!-- Category News Start-->
+<div class="cat-news">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <% if (articles.length > 0) { %>
+        <h2>New articles will be added here!</h2>
+        <div class="row cn-slider">
+          <% for (let article of articles) { %>
+          <div class="col-md-6">
+            <div class="cn-img">
+              <img src="<%= article.imgUrl %>" />
+              <div class="cn-title">
+                <a href="/<%= article._id %>"><%= article.title %></a>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <% } else { %>
+        <h1>No Articles Added Yet From Database!</h1>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Category News End-->
+<%- include('./includes/end.ejs') %>
